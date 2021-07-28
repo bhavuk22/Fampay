@@ -19,5 +19,5 @@ from django.urls import include
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url('api/fampay-youtube', include('fampay_youtube_backend.urls')),
+    url('api/fampay-youtube/', include('fampay_youtube_backend.urls')),
 ]

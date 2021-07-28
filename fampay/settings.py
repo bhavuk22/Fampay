@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_crontab'
+    'django_crontab',
+    'fampay_youtube_backend'
 ]
 
 MIDDLEWARE = [
@@ -98,6 +99,10 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
+]
+
+CRONJOBS = [
+    ('*/10 * * * *', 'fampay_youtube_backend.cron.fetch_and_store_youtube_videos','>> /home/bhavuk_dahiya/fampay/cronjob.log')
 ]
 
 
