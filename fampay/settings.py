@@ -102,7 +102,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 CRONJOBS = [
-    ('*/1 * * * * ', 'fampay_youtube_backend.cron.fetch_and_store_youtube_videos')
+    ('*/1 * * * * ', 'fampay_youtube_backend.cron.fetch_and_store_youtube_videos', '>> ~/cronjob.log')
 ]
 
 
