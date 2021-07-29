@@ -9,7 +9,7 @@ from fampay_youtube_backend.models import Video
 
 
 def fetch_and_store_youtube_videos():
-    print(datetime.datetime.now())
+    print(datetime.datetime.now(datetime.timezone.utc))
     api_keys = models.APIKey.objects.filter(is_limit_over=False)
     print(api_keys)
     if not len(api_keys):
@@ -55,8 +55,9 @@ def fetch_and_store_youtube_videos():
     except Exception as ex:
         print(ex)
 
+
 def get_video_thumbnails_from_youtube_data(data):
     return [{
         'screen_size': screen_size,
-        'url':  data['snippet']['thumbnails'][screen_size]['url'],
+        'url': data['snippet']['thumbnails'][screen_size]['url'],
     } for screen_size in data['snippet']['thumbnails']]
