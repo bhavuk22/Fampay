@@ -22,8 +22,7 @@ http://localhost:8000/api/fampay-youtube/add_key
 http://localhost:8000/api/fampay-youtube/add_key ---> Used to add the Api Key that will be used for fetching the videos from youtube APIs.
 
 # Create Superuser
-
-docker ps  ----->  for getting the container Id
+docker ps ---> for getting the container-Id
 docker exec -it <container-id> python manage.py createsuperuser
   
   
