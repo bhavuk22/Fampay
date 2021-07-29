@@ -14,7 +14,9 @@ docker run -p 8000:8000 fampay-youtube
 **GET APIs**
 
 http://localhost:8000/api/fampay-youtube/videos?limit=10&offset=1 ---> used to get all the videos in limit offset pagination manner that stored in DB
+
 http://localhost:8000/api/fampay-youtube/videos?search="POP"      ---> used to get all the videos that are having "POP" in title and description
+
 http://localhost:8000/api/fampay-youtube/add_key
 
 **POST APIs**
