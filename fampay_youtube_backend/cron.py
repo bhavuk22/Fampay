@@ -9,6 +9,7 @@ from fampay_youtube_backend.models import Video
 
 
 def fetch_and_store_youtube_videos():
+    print(datetime.datetime.now())
     api_keys = models.APIKey.objects.filter(is_limit_over=False)
     print(api_keys)
     if not len(api_keys):
@@ -26,7 +27,6 @@ def fetch_and_store_youtube_videos():
         data = youtube_object.search().list(q='music', part="id,snippet", type="video", order="date",
                                             publishedAfter=new_interval_start_time_string,
                                             maxResults=10).execute()
-        print(data)
         for video in data["items"]:
             publish_date_time = str(video["snippet"]["publishedAt"])
             publish_date_time = datetime.datetime.strptime(publish_date_time, '%Y-%m-%dT%H:%M:%SZ')
