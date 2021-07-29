@@ -1,5 +1,4 @@
-from django.shortcuts import render
-from rest_framework import generics
+from rest_framework import generics, filters
 from rest_framework.exceptions import ValidationError
 from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.renderers import JSONRenderer
@@ -10,6 +9,8 @@ from fampay_youtube_backend import serializers, models
 class GetVideos(generics.ListAPIView):
     """View for getting all the videos, order by latest published date."""
     renderer_classes = [JSONRenderer]
+    search_fields = ['title', 'description']
+    filter_backends = (filters.SearchFilter,)
     serializer_class = serializers.VideoSerializer
     pagination_class = LimitOffsetPagination
 
