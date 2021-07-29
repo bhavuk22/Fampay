@@ -29,7 +29,8 @@ http://localhost:8000/api/fampay-youtube/add_key ---> Used to add the Api Key th
 docker ps ---> for getting the container-Id
 
 docker exec -it <container-id> python manage.py createsuperuser
-  
+
+If you didn't get response in the Videos Api Try running the cronjob once manually in docker, Then you will get the response.  
   
   
 
