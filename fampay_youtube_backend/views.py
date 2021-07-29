@@ -7,7 +7,7 @@ from fampay_youtube_backend import serializers, models
 
 
 class GetVideos(generics.ListAPIView):
-    """View for getting all the videos, order by latest published date."""
+    """View for getting all the videos and search videos(title,description) order by latest published date."""
     renderer_classes = [JSONRenderer]
     search_fields = ['title', 'description']
     filter_backends = (filters.SearchFilter,)
@@ -22,5 +22,6 @@ class GetVideos(generics.ListAPIView):
 
 
 class AddAPIKey(generics.CreateAPIView):
+    """View For Adding the API KEY in the table"""
     renderer_classes = [JSONRenderer]
     serializer_class = serializers.APIKeySerializer
