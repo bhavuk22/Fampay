@@ -27,6 +27,7 @@ def fetch_and_store_youtube_videos():
         data = youtube_object.search().list(q='music', part="id,snippet", type="video", order="date",
                                             publishedAfter=new_interval_start_time_string,
                                             maxResults=10).execute()
+        print(data)
         for video in data["items"]:
             publish_date_time = str(video["snippet"]["publishedAt"])
             publish_date_time = datetime.datetime.strptime(publish_date_time, '%Y-%m-%dT%H:%M:%SZ')
