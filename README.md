@@ -21,7 +21,7 @@ http://localhost:8000/api/fampay-youtube/add_key
 
 http://localhost:8000/api/fampay-youtube/add_key ---> Used to add the Api Key that will be used for fetching the videos from youtube APIs.
 
-# Create Superuser
+# Create Superuser for checking the Database
 
 docker ps ---> for getting the container-Id
 
