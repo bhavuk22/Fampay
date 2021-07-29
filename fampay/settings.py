@@ -102,7 +102,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 CRONJOBS = [
-    ('*/10 * * * * ', 'fampay_youtube_backend.cron.fetch_and_store_youtube_videos', '>> ~/fampay/cronjob.log')
+    ('*/1 * * * * ', 'fampay_youtube_backend.cron.fetch_and_store_youtube_videos', '>> ~/fampay/cronjob.log')
 ]
 
 
@@ -117,7 +117,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = False
+USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
