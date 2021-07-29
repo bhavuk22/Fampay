@@ -7,6 +7,7 @@
 
 # How to build docker and run
 docker build -t fampay-youtube .
+
 docker run -p 8000:8000 fampay-youtube
 
 # APIs 
